@@ -19,7 +19,7 @@ public class BookServiceImp implements GenericService<Book> {
                 book.setBookid(bookId);
                 book.setTitle("Spring Boot Microservice");
                 book.setAuthor("Md Jewel");
-                book.setCoverPhotoUrl("Https://Google.com");
+                book.setCoverPhotoUrl("https://homepages.cae.wisc.edu/~ece533/images/fruits.png");
                 book.setIsbnNumber(1232323L);
                 book.setPrice(432.00);
                 book.setLanguage("Bangla");

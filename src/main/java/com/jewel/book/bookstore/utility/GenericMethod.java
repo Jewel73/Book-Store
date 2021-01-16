@@ -1,9 +1,6 @@
 package com.jewel.book.bookstore.utility;
 
 import java.util.Collection;
-
-import com.jewel.book.bookstore.model.Book;
-
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 public interface GenericMethod<T> {
         @GetMapping()
@@ -20,10 +18,10 @@ public interface GenericMethod<T> {
         ResponseEntity<T> findById(@PathVariable Long id);
         
         @PostMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-        ResponseEntity<T> save(T t);
+        ResponseEntity<T> save(@RequestBody T t);
 
         @PutMapping(consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
-        public ResponseEntity<T> update(T t);
+        public ResponseEntity<T> update(@RequestBody T t);
 
         @DeleteMapping("{id}")
         public ResponseEntity<T> deleteById(@PathVariable Long id);
